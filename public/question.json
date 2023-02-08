@@ -1,0 +1,24 @@
+[
+    {
+      "id": "1",
+      "question": "Test Que 1",
+      "options": [
+       "js",
+       "Css",
+       "HTML",
+       "Hello"
+      ],
+      "answer": "Hello"
+    },
+    {
+      "id": "2",
+      "question": "Test Que 2",
+      "options": [
+       "js",
+       "Css",
+       "HTML",
+       "Hello"
+      ],
+      "answer": "Hello"
+    }
+  ]
