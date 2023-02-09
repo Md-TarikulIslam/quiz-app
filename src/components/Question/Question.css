@@ -1,3 +1,20 @@
+.items{
+    padding: 20px;
+    margin: 10px 400px;
+    background-color: rgba(255, 255, 0, 0.412);
+    border-radius: 30px;
+}
+
+.question-item{
+    font-size: 25px;
+    font-weight: 700;
+    padding: 15px 0;
+    margin: 0 50px;
+    margin-bottom: 30px;
+    background-color: rgba(128, 128, 128, 0.514);
+    border-radius: 20px;
+}
+
 .option-btn{
     display: flex;
     flex-direction: row;
@@ -7,10 +24,12 @@
     padding: 5px;
     border-radius: 3px;
     border:none;
-    width: 100px;
+    width: 550px;
+    height: 50px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
     min-height: 30px;
     background-color: white;
+    font-size: 20px;
   }

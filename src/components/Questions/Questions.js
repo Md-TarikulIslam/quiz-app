@@ -10,7 +10,7 @@ const Questions = () => {
     },[])
     return (
         <div>
-          <h2>{questions.length}</h2>
+          {/* <h2>{questions.length}</h2> */}
           {
             // setInterval(function(){
               questions.map((question)=> <Question

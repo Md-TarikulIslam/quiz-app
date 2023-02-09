@@ -5,8 +5,8 @@ const Question = (props) => {
   
     const {id, question, answer, options}=props.question
     return (
-        <div>
-                <p>{id}. {question}</p>
+        <div className='items'>
+                <p className='question-item'>{id}. {question}</p>
                {
                 options.map(option => <button className='option-btn'>{option}</button> )
                }     
