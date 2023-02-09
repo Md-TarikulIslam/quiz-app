@@ -29,11 +29,12 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
-    min-height: 30px;
     background-color: white;
     font-size: 20px;
   }
-
+.option-btn:hover{
+    background-color: rgba(127, 255, 212, 0.51);
+}
 
   @media only screen and (max-width: 480px){
     .items{

@@ -8,6 +8,8 @@ const Questions = () => {
         .then(res=>res.json())
         .then(data=>setQuestions(data))
     },[])
+
+   
     return (
         <div>
           {/* <h2>{questions.length}</h2> */}
