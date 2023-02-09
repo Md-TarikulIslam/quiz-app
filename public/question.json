@@ -1,24 +1,112 @@
 [
     {
       "id": "1",
-      "question": "Test Que 1",
+      "question": "What file extension (file type) will you use to save a website file? ",
       "options": [
-       "js",
-       "Css",
-       "HTML",
-       "Hello"
+       "html",
+       ".web",
+       ".html",
+       "chrome"
       ],
-      "answer": "Hello"
+      "answer": ".html"
     },
     {
       "id": "2",
-      "question": "Test Que 2",
+      "question": "What is the meaning of HTML?",
       "options": [
-       "js",
-       "Css",
-       "HTML",
-       "Hello"
+       "HyperText Makeup Language",
+       "How To Meet Ladies",
+       "HyperText Markup Language",
+       "Himel Tomar Mama Lage"
       ],
-      "answer": "Hello"
+      "answer": "HyperText Markup Language"
+    },
+    {
+      "id": "3",
+      "question": "How would you write a paragraph for a website (pay attention)?",
+      "options": [
+       "<p/>paragraph</p>",
+       "<p>I am a paragraph<p>",
+       "<p I am a paragraph>",
+       "<p>I am a Paragraph</p>"
+      ],
+      "answer": "<p>I am a Paragraph</p>"
+    },
+    {
+      "id": "4",
+      "question": "How many HTML heading tags are there?",
+      "options": [
+       "8",
+       "10",
+       "6",
+       "3"
+      ],
+      "answer": "6"
+    },
+    {
+      "id": "5",
+      "question": "Which one is the third biggest heading tag?",
+      "options": [
+       "<h3>I am the one</h3>",
+       "<h1>I am the one</h1>",
+       "<h2>I am the one</h2>",
+       "<h4>I am the one</h4>"
+      ],
+      "answer": "<h3>I am the one</h3>"
+    },
+    {
+      "id": "6",
+      "question": "If you click on an anchor tag, where will it usually open (if needed, try it out yourself).",
+      "options": [
+       "It will open in a new tab",
+       "It will open in the current tab",
+       "Abbu basai, can not open the door now",
+       "It will open new browser window"
+      ],
+      "answer": "It will open in the current tab"
+    },
+    {
+      "id": "7",
+      "question": "How will you write a list item tag containing the word mobile?",
+      "options": [
+       "<ul>mobile</ul>",
+       "<ol>mobile</ol>",
+       "<li>mobile</li>",
+       "<item>mobile</item>"
+      ],
+      "answer": "<li>mobile</li>"
+    },
+    {
+      "id": "8",
+      "question": "How would you write a button tag?",
+      "options": [
+       "<button></button>",
+       "<buton></buton>",
+       "<btn></btn>",
+       "<buttn></buttn>"
+      ],
+      "answer": "<button></button>"
+    },
+    {
+      "id": "9",
+      "question": "Which attribute is not a part of the input tag?",
+      "options": [
+       "type",
+       "src",
+       "placeholder",
+       "name"
+      ],
+      "answer": "src"
+    },
+    {
+      "id": "10",
+      "question": "Which tag will you use to add style on your website?",
+      "options": [
+       "<css></css>",
+       "<color></color>",
+       "<style></style>",
+       "<head></head>"
+      ],
+      "answer": "<style></style>"
     }
   ]
