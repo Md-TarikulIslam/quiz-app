@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Question from '../Question/Question';
 
 const Questions = () => {
     const [questions, setQuestions] = useState([])
@@ -11,8 +12,14 @@ const Questions = () => {
         <div>
           <h2>{questions.length}</h2>
           {
-            questions.map(question=>console.log(question))
-          }
+            // setInterval(function(){
+              questions.map((question)=> <Question
+              key={question.id}
+              question={question}
+              ></Question>)
+            }
+            {/* , 1000)}  */}
+      
         </div>
     );
 };
