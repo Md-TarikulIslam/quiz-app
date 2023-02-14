@@ -132,35 +132,52 @@ const Questions = () => {
       }
  
      if(count === allQuestion.length){
-      setShowScore(true)
+      
       setCount(allQuestion.length)
-      setTimer(0)
+      setTimeout(()=>{
+        setTimer(0)
+        setShowScore(true)
+      },[3000])
      }
      
   
-    let timer1 =  setTimeout(()=>{
-        setTimer(timer-1000)
-      },[1000]);
-      return ()=>{
-        clearTimeout(timer1, count)
-      }; 
+ 
     
   },[count, timer])
 
+  useEffect(()=>{
+    if(count<=allQuestion.length){
+      let timer1 =  setTimeout(()=>{
+        setTimer(timer-1000)
+      },[1000]);
+      return ()=>{
+        clearTimeout(timer1, timer)
+      }; 
+    }
+  },[timer, count])
+
   const handleButton = (countObj, answer)=>{
-    console.log(countObj,answer)
+    // console.log(countObj,answer)
+
+    // setTimeout(() => {
+    //   setTimer(timer-2000)
+    //  }, 1000);
+
     if(countObj?.answer===answer)
     {
+   
+
       setScore(score+1);
+      
         }
         if(count<allQuestion.length)
         {
-          setCount(count+1)
+         
+          setCount(count+1)    
         }
         else{
           setShowScore(true);
         }
-
   }
 
   console.log(count, allQuestion.length)
@@ -187,7 +204,7 @@ const Questions = () => {
         {
           allQuestion[count-1].options.map((option)=>(
             
-            <button key={option} className='btn' onClick={()=>handleButton(allQuestion[count-1], option)}>{option}</button>
+            <button key={option} className='btn' onClick={()=>handleButton(allQuestion[count-1], option, timer)}>{option}</button>
           ))
         }
         </div>
