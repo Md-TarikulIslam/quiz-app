@@ -119,27 +119,34 @@ const allQuestion = [
 
 const Questions = () => {
     const [count, setCount] = useState(1)
-    const [timer, setTimer] = useState(3000)
+    const [timer, setTimer] =useState(3000)
     const [score, setScore] = useState(0)
     const [showScore, setShowScore] = useState(false)
-   
-  //   useEffect(()=>{
-  //     if(timer<=0){
-  //       setCount(count+1)
-  //       setTimer(3000)
-  //     }
-    
-  //     setTimeout(()=>{
-  //       setTimer(timer-1000)
-  //     },[1000])
 
-  //     return () => {
-  //       clearTimeout(timer);
-  //     };
-  //     // eslint-disable-next-line react-hooks/exhaustive-deps
-  // },[])
-// const [counter, setCounter] = useState(0)
-  // const result = allQuestion.map((ans=> ans = {ans}))
+   
+    useEffect(()=>{
+
+      if(timer<=0 ){
+        setCount(count+1) 
+        setTimer(3000)
+      }
+ 
+     if(count === allQuestion.length){
+      setShowScore(true)
+      setCount(allQuestion.length)
+      setTimer(0)
+     }
+     
+  
+    let timer1 =  setTimeout(()=>{
+        setTimer(timer-1000)
+      },[1000]);
+      return ()=>{
+        clearTimeout(timer1, count)
+      }; 
+    
+  },[count, timer])
+
   const handleButton = (countObj, answer)=>{
     console.log(countObj,answer)
     if(countObj?.answer===answer)
@@ -157,33 +164,36 @@ const Questions = () => {
   }
 
   console.log(count, allQuestion.length)
-   
+
     return (
         <div>
-        {(showScore && count==allQuestion.length)? (
+          <div>
+          </div>
+        {(showScore && count===allQuestion.length )? (
           <div>
             Your score is {score} out of {allQuestion.length}
           </div>
         ) : (
-            <div className='items'>
-              <div className='question-item'>
-              {allQuestion[count-1].id}
-              <span>. </span>
-              {allQuestion[count-1].question}
-              </div>
-            <div className='option-area'>
-            {
-              allQuestion[count-1].options.map((option)=>(
-                
-                <button key={option} className='btn' onClick={()=>handleButton(allQuestion[count-1], option)}>{option}</button>
-              ))
-            }
-            </div>
-          
-            </div>
-        )}
-          
+        
+          <div className='items'>
+               <h2>{timer/1000}</h2>
+          <div className='question-item'>
+         
+          {allQuestion[count-1].id}
+          <span>. </span>
+          {allQuestion[count-1].question}
+          </div>
+        <div className='option-area'>
+        {
+          allQuestion[count-1].options.map((option)=>(
+            
+            <button key={option} className='btn' onClick={()=>handleButton(allQuestion[count-1], option)}>{option}</button>
+          ))
+        }
+        </div>
       
+        </div>
+        )}
         </div>
     );
 };
