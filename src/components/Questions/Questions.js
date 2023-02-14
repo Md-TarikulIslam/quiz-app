@@ -176,7 +176,7 @@ const Questions = () => {
         ) : (
         
           <div className='items'>
-               <h2>{timer/1000}</h2>
+          <h2 className='timer'>{timer/1000}</h2>
           <div className='question-item'>
          
           {allQuestion[count-1].id}
