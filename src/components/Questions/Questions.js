@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Questions.css'
+import classNames from 'classnames';
 
 
 const allQuestion = [
@@ -122,6 +123,7 @@ const Questions = () => {
     const [timer, setTimer] =useState(3000)
     const [score, setScore] = useState(0)
     const [showScore, setShowScore] = useState(false)
+    // const [right, setRight] = useState(false)
 
    
     useEffect(()=>{
@@ -139,10 +141,6 @@ const Questions = () => {
         setShowScore(true)
       },[3000])
      }
-     
-  
- 
-    
   },[count, timer])
 
   useEffect(()=>{
@@ -157,6 +155,7 @@ const Questions = () => {
   },[timer, count])
 
   const handleButton = (countObj, answer)=>{
+    // setRight(!right)
     // console.log(countObj,answer)
 
     // setTimeout(() => {
@@ -166,7 +165,7 @@ const Questions = () => {
     if(countObj?.answer===answer)
     {
    
-
+      
       setScore(score+1);
       
         }
@@ -204,7 +203,7 @@ const Questions = () => {
         {
           allQuestion[count-1].options.map((option)=>(
             
-            <button key={option} className='btn' onClick={()=>handleButton(allQuestion[count-1], option, timer)}>{option}</button>
+            <button key={option} className={classNames('btn')} onClick={()=>handleButton(allQuestion[count-1], option, timer)}>{option}</button>
           ))
         }
         </div>
