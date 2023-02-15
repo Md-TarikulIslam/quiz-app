@@ -123,7 +123,7 @@ const Questions = () => {
     const [timer, setTimer] =useState(10000)
     const [score, setScore] = useState(0)
     const [showScore, setShowScore] = useState(false)
-    // const [right, setRight] = useState(false)
+
 
    
     useEffect(()=>{
@@ -143,6 +143,9 @@ const Questions = () => {
      }
   },[count, timer])
 
+
+
+
   useEffect(()=>{
     if(count<=allQuestion.length){
       let timer1 =  setTimeout(()=>{
@@ -155,20 +158,14 @@ const Questions = () => {
   },[timer, count])
 
 
+
+
   const handleButton = (countObj, answer)=>{
-    // setRight(!right)
-    // console.log(countObj,answer)
-
-    // setTimeout(() => {
-    //   setTimer(timer-2000)
-    //  }, 1000);
-
-
-
+   
     if(countObj?.answer===answer)
     {
-      
       setScore(score+1);
+     
         }
       
         if(count<allQuestion.length)
@@ -183,7 +180,6 @@ const Questions = () => {
          
           setTimeout(() => {
             setTimer(10000)
-            setCount(count+1)  
           }, 1000);
           setShowScore(true);
         }
@@ -211,9 +207,8 @@ const Questions = () => {
           </div>
         <div className='option-area'>
         {
-          allQuestion[count-1].options.map((option)=>(
-            
-            <button style={{backgroundColor: (option===allQuestion[count-1].answer)? 'green':'red'}} key={option} className={classNames('btn')} onClick={()=>handleButton(allQuestion[count-1], option, timer)}>{option}</button>
+          allQuestion[count-1].options.map((option)=>( 
+            <button  key={option} className={classNames('btn')} onClick={()=>handleButton(allQuestion[count-1], option, timer)}>{option}</button>
           ))
         }
         </div>
