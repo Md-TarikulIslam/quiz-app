@@ -120,7 +120,7 @@ const allQuestion = [
 
 const Questions = () => {
     const [count, setCount] = useState(1)
-    const [timer, setTimer] =useState(3000)
+    const [timer, setTimer] =useState(10000)
     const [score, setScore] = useState(0)
     const [showScore, setShowScore] = useState(false)
     // const [right, setRight] = useState(false)
@@ -130,7 +130,7 @@ const Questions = () => {
 
       if(timer<=0 ){
         setCount(count+1) 
-        setTimer(3000)
+        setTimer(10000)
       }
  
      if(count === allQuestion.length){
@@ -139,7 +139,7 @@ const Questions = () => {
       setTimeout(()=>{
         setTimer(0)
         setShowScore(true)
-      },[3000])
+      },[10000])
      }
   },[count, timer])
 
@@ -154,6 +154,7 @@ const Questions = () => {
     }
   },[timer, count])
 
+
   const handleButton = (countObj, answer)=>{
     // setRight(!right)
     // console.log(countObj,answer)
@@ -162,19 +163,28 @@ const Questions = () => {
     //   setTimer(timer-2000)
     //  }, 1000);
 
+
+
     if(countObj?.answer===answer)
     {
-   
       
       setScore(score+1);
-      
         }
+      
         if(count<allQuestion.length)
         {
+        setTimeout(() => {
+          setTimer(10000)
+          setCount(count+1)  
+        }, 1000);
          
-          setCount(count+1)    
         }
         else{
+         
+          setTimeout(() => {
+            setTimer(10000)
+            setCount(count+1)  
+          }, 1000);
           setShowScore(true);
         }
   }
@@ -203,7 +213,7 @@ const Questions = () => {
         {
           allQuestion[count-1].options.map((option)=>(
             
-            <button key={option} className={classNames('btn')} onClick={()=>handleButton(allQuestion[count-1], option, timer)}>{option}</button>
+            <button style={{backgroundColor: (option===allQuestion[count-1].answer)? 'green':'red'}} key={option} className={classNames('btn')} onClick={()=>handleButton(allQuestion[count-1], option, timer)}>{option}</button>
           ))
         }
         </div>
